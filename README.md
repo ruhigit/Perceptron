@@ -55,12 +55,12 @@ Command:python3 nelearn.py TRAININGFILE MODEL
 
 __netag.py__
 Command:python3 netag.py MODEL
------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
 
 ###  Accuracy of part-of-speech tagger: ###
 __95.56%__
 
-###  Precision, recall and F-score for each of the named entity types for named entity recognizer, and the overall F-score: ###
+####  Precision, recall and F-score for each of the named entity types for named entity recognizer, and the overall F-score: ####
 
 	Precision     	      | Recall	     		 	        | F-score
 
@@ -73,10 +73,6 @@ __95.56%__
 	LOC 0.9461942257217848|  0.7327235772357723             |0.8259
 __Overall Fscore: 0.7504 __
 
-###   What happens if you use your Naive Bayes classifier instead of your perceptron classifier (report performance metrics)? Why do you think that is? ###
-With Naive Bayes:POS:93.1%
-Reason: 
-1)Naive Bayes basic assumption is that the words are independent. Here in part-of-speech tagging and named entity classification, we use the context of the words. Therefore the tags depend on the structure of surrounding words. 
-2)The number of iterations Hence Naive Bayes does not perform better.
+
 
 
