@@ -1,13 +1,17 @@
 ##Classify each line of input
-##Will be invoked as python3 percepclassify.py MODELFILE
-##The label(class) for each sentence will be the output
+##Will be invoked as python3 percepclassify.py MODELFILE < data.in > data.out
+##The label/class for each input will be the output
 
 import pickle
 import sys
 
+##The feature_vector is the model that will be used to calculate the classes
+##Testset is a list of sentnces that have to be tagged with the right class.
 
-def classify(sentence):
+def classify(feature_vector,sentence):
 	weights=dict()
+	predicted_class=""
+	prev_tag=predicted_class
 	maxi=0
 	for classes in feature_vector:
 		weights[classes]=0
@@ -20,17 +24,20 @@ def classify(sentence):
 		if(maxi<=weights[classes]):
 			maxi=weights[classes]
 			predicted_class=classes
-	print(predicted_class)
+	##return(predicted_class)		
+	return predicted_class
+def main():
+	testset=list()
+	predicted_values=list()
+	modelfile=open(sys.argv[1],"rb")
+	feature_vector=pickle.load(modelfile)
+	modelfile.close()
+	for sentence in sys.stdin:
+		predicted_value=classify(feature_vector,sentence)
+		print(predicted_value)
+		sys.stdout.flush()
+	
 	return
 	
-modelfile=open(sys.argv[1],"rb")
-feature_vector=pickle.load(modelfile)
-modelfile.close()
-while(1):
-	sentence=input()
-	classify(sentence)
-	
-
-	
-	
-	
+if __name__=="__main__":
+	main()	
