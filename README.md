@@ -1,4 +1,4 @@
-# Perceptron
+# Part-of-Speech Tagging and Named-Entity Recognition
 Supervised classification of an input into one of several possible non-binary outputs. It is a type of linear classifier, i.e. a classification algorithm that makes its predictions based on a linear predictor function combining a set of weights with the feature vector. The algorithm allows for online learning, in that it processes elements in the training set one at a time.
 
 -----------------------------------------------------------------------------------------------------------------------------
@@ -56,7 +56,8 @@ Command:python3 nelearn.py TRAININGFILE MODEL
 __netag.py__
 
 Command:python3 netag.py MODEL
--------------------------------------------------------------------------------------------------------------------------
+
+
 
 ###  Accuracy of part-of-speech tagger: ###
 __95.56%__
